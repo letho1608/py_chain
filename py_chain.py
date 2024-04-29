@@ -39,7 +39,7 @@ class Blockchain:
             block.nonce += 1
             block.hash = block.calculate_hash()
         end_time = time.time()
-        print(f"| Mined: | {block.index} Block | Block hash: {block.hash} | Difficulty: {block.difficulty} | Nonce: {block.nonce} |", end="\r")
+        print(f"| Mined: {block.index} Block | Block hash: {block.hash} | Difficulty: {block.difficulty} | Nonce: {block.nonce} |", end="\r")
         self.chain.append(block)
         self.pending_transactions = [Transaction("network", miner_address, 1)]  # Reward for the miner
 
